@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_2" />
+        <device id="pixel" />
+        <device id="wear_square" />
+        <device id="Nexus 5X" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="25fcc437-ac32-46a1-800d-5f5bd994958e" name="Default Changelist" comment="" />
+    <list default="true" id="25fcc437-ac32-46a1-800d-5f5bd994958e" name="Default Changelist" comment="Removed top padding">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/chunk_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/goals/GoalsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/goals/GoalsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_goals.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_goals.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ZY224XFTHZ]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +78,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ZY224XFTHZ" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-14T23:52:08.919Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -105,28 +163,68 @@
       <option name="presentableId" value="Default" />
       <updated>1617925698373</updated>
     </task>
+    <task id="LOCAL-00001" summary="Removed top padding">
+      <created>1618585217838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618585217838</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed top padding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed top padding" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617925728291">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="466" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1440.205.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617925728291" />
-    <state width="1878" height="287" key="GridCell.Tab.0.bottom" timestamp="1617925754236">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="525" y="279" key="AndroidCreateResourceFileDialog" timestamp="1618721806594">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="525" y="279" key="AndroidCreateResourceFileDialog/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618721806594" />
+    <state x="587" y="93" key="CommitChangelistDialog2" timestamp="1618585124381">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="587" y="93" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618585124381" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1618587709160">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618587709160" />
+    <state width="1874" height="284" key="GridCell.Tab.0.bottom" timestamp="1618733467160">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1878" height="287" key="GridCell.Tab.0.bottom/-1440.205.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617925754236" />
-    <state width="1878" height="287" key="GridCell.Tab.0.center" timestamp="1617925754235">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state width="1874" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618733467160" />
+    <state width="1874" height="284" key="GridCell.Tab.0.center" timestamp="1618733467159">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1878" height="287" key="GridCell.Tab.0.center/-1440.205.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617925754235" />
-    <state width="1878" height="287" key="GridCell.Tab.0.left" timestamp="1617925754235">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state width="1874" height="284" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618733467159" />
+    <state width="1874" height="284" key="GridCell.Tab.0.left" timestamp="1618733467159">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1878" height="287" key="GridCell.Tab.0.left/-1440.205.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617925754235" />
-    <state width="1878" height="287" key="GridCell.Tab.0.right" timestamp="1617925754236">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state width="1874" height="284" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618733467159" />
+    <state width="1874" height="284" key="GridCell.Tab.0.right" timestamp="1618733467159">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1878" height="287" key="GridCell.Tab.0.right/-1440.205.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617925754236" />
+    <state width="1874" height="284" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.864@0.0.1920.1050" timestamp="1618733467159" />
   </component>
 </project>
