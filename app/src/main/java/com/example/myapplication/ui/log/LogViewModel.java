@@ -10,7 +10,6 @@ public class LogViewModel extends ViewModel {
 
     public LogViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is the log page!");
     }
 
     public LiveData<String> getText() {
