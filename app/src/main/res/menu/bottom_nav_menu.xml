@@ -12,6 +12,11 @@
         android:title="@string/title_goals" />
 
     <item
+        android:id="@+id/navigation_add"
+        android:icon="@drawable/ic_action_add_circle_outline"
+        android:title="@string/title_add" />
+
+    <item
         android:id="@+id/navigation_friends"
         android:icon="@drawable/ic_action_friends"
         android:title="@string/title_friends" />
@@ -20,5 +25,7 @@
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_action_settings"
         android:title="@string/title_settings" />
+
+
 
 </menu>
