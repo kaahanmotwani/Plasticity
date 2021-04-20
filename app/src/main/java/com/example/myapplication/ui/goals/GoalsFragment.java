@@ -13,10 +13,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+
 import com.example.myapplication.R;
+import com.example.myapplication.ui.add.add.AddFragment;
+import com.example.myapplication.ui.log.LogFragment;
 
 public class GoalsFragment extends Fragment {
 
@@ -28,17 +33,26 @@ public class GoalsFragment extends Fragment {
                 new ViewModelProvider(this).get(GoalsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_goals, container, false);
 
-        ViewGroup goalsList = root.findViewById(R.id.goalsList);
+        //ViewGroup goalsList = root.findViewById(R.id.goalsList);
 
         Button addGoals = root.findViewById(R.id.add_goal);
+        // Onclick for add button
         addGoals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
-                TextView goalName = goalChunk.findViewById(R.id.goalName);
-                goalName.setText("Test");
+                AddGoalFragment fragment = new AddGoalFragment();
 
-                goalsList.addView(goalChunk);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.goalsId, fragment);
+                fragmentTransaction.addToBackStack(null);
+
+                fragmentTransaction.commit();
+//                View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
+//                TextView goalName = goalChunk.findViewById(R.id.goalName);
+//                goalName.setText("Test");
+//
+//                goalsList.addView(goalChunk);
             }
         });
         return root;
