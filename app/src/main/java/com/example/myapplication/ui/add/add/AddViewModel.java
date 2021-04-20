@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.add.add;
+package com.example.myapplication.ui.log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,7 +10,6 @@ public class AddViewModel extends ViewModel {
 
     public AddViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is the add page.");
     }
 
     public LiveData<String> getText() {
