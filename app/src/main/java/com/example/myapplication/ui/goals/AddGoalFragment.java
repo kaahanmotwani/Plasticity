@@ -75,6 +75,17 @@ public class AddGoalFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_add_goal, container, false);
         Button submitGoal = root.findViewById(R.id.submitGoal);
         EditText goalName = root.findViewById(R.id.setGoalName);
+        EditText goalNotes = root.findViewById(R.id.setGoalNotes);
+
+        try {
+            Bundle bundle = this.getArguments();
+            goalName.setText(bundle.getString("name"));
+            goalNotes.setText(bundle.getString("notes"));
+        } catch (Exception e) {
+
+        }
+
+
 
         // Onclick for add button
         submitGoal.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +103,29 @@ public class AddGoalFragment extends Fragment {
                 fragmentTransaction.commit();
 
 
-                MainActivity.goals.add(goalName.getText().toString());
+                MainActivity.goals.put(goalName.getText().toString(), new Goal(goalName.getText().toString(), goalNotes.getText().toString()));
+            }
+        });
+
+        Button cancelGoal = root.findViewById(R.id.cancelGoal);
+
+        // Onclick for add button
+        cancelGoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                fragmentManager.popBackStack();
+                GoalsFragment fragment = new GoalsFragment();
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.addGoalLayout, fragment);
+                //fragmentTransaction.addToBackStack(null);
+
+                fragmentTransaction.commit();
+
+                MainActivity.goals.remove(goalName.getText().toString());
+                //MainActivity.goals.remove(goalName.getText().toString(), goalNotes.getText().toString());
             }
         });
 

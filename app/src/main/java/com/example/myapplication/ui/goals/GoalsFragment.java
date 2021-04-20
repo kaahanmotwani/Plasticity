@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ import com.example.myapplication.ui.log.LogFragment;
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GoalsFragment extends Fragment {
 
@@ -48,12 +50,35 @@ public class GoalsFragment extends Fragment {
 //        goalsList.addView(goalChunk);
 //        Log.i("tag", goals.get(0));
 
-        for (String goal : MainActivity.goals) {
+        for (HashMap.Entry<String,Goal> entry : MainActivity.goals.entrySet()) {
             View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
             TextView goalName = goalChunk.findViewById(R.id.goalName);
-            goalName.setText(goal);
+            goalName.setText(entry.getValue().getName());
             goalsList.addView(goalChunk);
-            Log.i("tag", goal);
+
+            Button editButton = root.findViewById(R.id.edit);
+
+
+            editButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AddGoalFragment fragment = new AddGoalFragment();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", entry.getKey());
+                    bundle.putString("notes", entry.getValue().getNotes());
+                    fragment.setArguments(bundle);
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.goalsId, fragment);
+                    fragmentTransaction.commit();
+
+
+
+                }
+            });
+
         }
         goalsViewModel =
                 new ViewModelProvider(this).get(GoalsViewModel.class);
@@ -81,6 +106,9 @@ public class GoalsFragment extends Fragment {
 //                goalsList.addView(goalChunk);
             }
         });
+
+
+
         return root;
     }
 

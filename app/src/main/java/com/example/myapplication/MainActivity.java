@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
+import com.example.myapplication.ui.goals.Goal;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +12,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<String> goals = new ArrayList<>();
+    public static HashMap<String, Goal> goals = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
