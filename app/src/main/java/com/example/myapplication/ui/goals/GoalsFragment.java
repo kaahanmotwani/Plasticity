@@ -19,19 +19,45 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.ui.add.add.AddFragment;
 import com.example.myapplication.ui.log.LogFragment;
+
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class GoalsFragment extends Fragment {
 
     private GoalsViewModel goalsViewModel;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        if (container != null) {
+            container.removeAllViews();
+        }
+        View root = inflater.inflate(R.layout.fragment_goals, container, false);
+        ViewGroup goalsList = root.findViewById(R.id.goalsList);
+//        goals.add("test");
+//        View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
+//        TextView goalName = goalChunk.findViewById(R.id.goalName);
+//        goalName.setText(goals.get(0));
+//        goalsList.addView(goalChunk);
+//        Log.i("tag", goals.get(0));
+
+        for (String goal : MainActivity.goals) {
+            View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
+            TextView goalName = goalChunk.findViewById(R.id.goalName);
+            goalName.setText(goal);
+            goalsList.addView(goalChunk);
+            Log.i("tag", goal);
+        }
         goalsViewModel =
                 new ViewModelProvider(this).get(GoalsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_goals, container, false);
+
 
         //ViewGroup goalsList = root.findViewById(R.id.goalsList);
 
@@ -45,7 +71,7 @@ public class GoalsFragment extends Fragment {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.goalsId, fragment);
-                fragmentTransaction.addToBackStack(null);
+                //fragmentTransaction.addToBackStack(null);
 
                 fragmentTransaction.commit();
 //                View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
@@ -57,4 +83,6 @@ public class GoalsFragment extends Fragment {
         });
         return root;
     }
+
+
 }

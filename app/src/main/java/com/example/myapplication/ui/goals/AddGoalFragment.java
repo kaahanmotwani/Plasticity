@@ -1,13 +1,21 @@
 package com.example.myapplication.ui.goals;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 /**
@@ -64,7 +72,31 @@ public class AddGoalFragment extends Fragment {
         if (container != null) {
             container.removeAllViews();
         }
+        View root = inflater.inflate(R.layout.fragment_add_goal, container, false);
+        Button submitGoal = root.findViewById(R.id.submitGoal);
+        EditText goalName = root.findViewById(R.id.setGoalName);
+
+        // Onclick for add button
+        submitGoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                fragmentManager.popBackStack();
+                GoalsFragment fragment = new GoalsFragment();
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.addGoalLayout, fragment);
+                //fragmentTransaction.addToBackStack(null);
+
+                fragmentTransaction.commit();
+
+
+                MainActivity.goals.add(goalName.getText().toString());
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_goal, container, false);
+        return root;
     }
 }
