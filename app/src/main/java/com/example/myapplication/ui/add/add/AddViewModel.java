@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.log;
+package com.example.myapplication.ui.add.add;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
