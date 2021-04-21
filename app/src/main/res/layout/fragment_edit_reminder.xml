@@ -7,139 +7,117 @@
     tools:context=".ui.friends.FriendsFragment">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/text_edit_reminders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:text="@string/edit_reminders"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:layout_below="@+id/text_edit_reminders"
-            android:layout_marginStart="100dp"
-            android:padding="10dp"
-            android:background="@android:color/black" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ExtraText,MissingConstraints">
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:autofillHints="@string/custom_name"
             android:hint="@string/custom_name"
             android:inputType="text"
-            android:layout_below="@id/text_edit_reminders"
-            android:padding="20dp"
-            android:layout_centerHorizontal="true"
+            android:padding="1dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:autofillHints="@string/custom_name" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sundaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sundaysw"
             android:layout_below="@id/editText"
             android:text="@string/sunday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
+        //android:layout_centerHorizontal="true"
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/mondaysw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/sundaysw"
+            android:layout_centerHorizontal="true"
             android:text="@string/monday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tuesdaysw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/mondaysw"
+            android:layout_centerHorizontal="true"
             android:text="@string/tuesday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/wednesdaysw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tuesdaysw"
+            android:layout_centerHorizontal="true"
             android:text="@string/wednesday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/thusdaysw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/wednesdaysw"
+            android:layout_centerHorizontal="true"
             android:text="@string/thusday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/fridaysw"
-            android:layout_below="@id/thusdaysw"
-            android:text="@string/friday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/thusdaysw"
+            android:layout_centerHorizontal="true"
+            android:text="@string/friday"
+            android:textSize="20sp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/saturdaysw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/fridaysw"
+            android:layout_centerHorizontal="true"
             android:text="@string/saturday"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/save"
             android:layout_below="@id/timepicker"
-            android:text="@string/save"
             android:layout_marginStart="75dp"
             android:layout_marginTop="20dp"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:text="@string/save" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/delete"
             android:layout_below="@id/timepicker"
-            android:text="@string/Delete"
-            android:layout_toEndOf="@id/save"
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:layout_toEndOf="@id/save"
+            android:text="@string/Delete" />
 
         <TimePicker
             android:id="@+id/timepicker"
-            android:layout_width="wrap_content"
-            android:layout_height="97dp"
-            android:layout_below="@id/saturdaysw"
-            android:layout_marginTop="0dp"
+            android:layout_width="406dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fridaysw"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="-77dp" />
 
 
     </RelativeLayout>
