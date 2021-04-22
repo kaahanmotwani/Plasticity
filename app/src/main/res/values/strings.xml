@@ -4,4 +4,25 @@
     <string name="title_goals">Goals</string>
     <string name="title_friends">Friends</string>
     <string name="title_settings">Settings</string>
+
+    <string-array name="friend_array">
+        <item>Lily</item>
+        <item>Poppy</item>
+        <item>Sunflower</item>
+        <item>Freesia</item>
+        <item>Daisy</item>
+        <item>Rose</item>
+        <item>Daffodil</item>
+        <item>Lavender</item>
+        <item>Peony</item>
+        <item>Lilac</item>
+        <item>Dahlia</item>
+        <item>Tulip</item>
+        <item>Dandelion</item>
+        <item>Geranium</item>
+        <item>Gardenia</item>
+        <item>Rhododendron</item>
+        <item>Azalea</item>
+    </string-array>
+
 </resources>
