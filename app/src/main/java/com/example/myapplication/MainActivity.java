@@ -2,19 +2,35 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
+
 import com.example.myapplication.ui.friends.Friend;
+
+
+import com.example.myapplication.ui.settings.ReminderFragment;
+import com.example.myapplication.ui.settings.Reminders;
+
+import com.example.myapplication.ui.goals.Goal;
+
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     public HashMap<String, Friend> friendHashMap;
+    public static HashMap<String, Goal> goals = new HashMap<>();
+    public static HashMap<String, Reminders> reminders = new HashMap<>();
+  
     public void initFakeUserData(){
         friendHashMap = new HashMap<String, Friend>();
         friendHashMap.put("Ned Stark", new Friend("Ned Stark",5, true));
@@ -27,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         friendHashMap.put("Tyrion Lannister", new Friend("Tyrion Lannister",2, true));
         friendHashMap.put("Robb Stark", new Friend("Robb Stark",1, true));
         friendHashMap.put("Night King", new Friend("Night King",1, true));
+
 
          friendHashMap.put("Eren Yeager", new Friend("Eren Yeager",5, false));
          friendHashMap.put("Mikasa Ackerman",new Friend("Mikasa Ackerman",5, false));
@@ -42,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -54,7 +72,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+
         initFakeUserData();
+
     }
+
 
 }

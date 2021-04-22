@@ -5,6 +5,7 @@
     <string name="title_friends">Friends</string>
     <string name="title_settings">Settings</string>
 
+
     <string-array name="friend_array">
         <item>Lily</item>
         <item>Poppy</item>
@@ -24,5 +25,36 @@
         <item>Rhododendron</item>
         <item>Azalea</item>
     </string-array>
+
+    <string name="settings">Settings</string>
+    <string name="hidden_from_leaderboard">        Hidden from leaderboard                       </string>
+    <string name="enable_friend_request">Enable friend request</string>
+    <string name="social_and_friends">Social and friends</string>
+    <string name="reminder">Reminder    ></string>
+    <string name="sound">Sound</string>
+    <string name="notification">Notification</string>
+    <string name="nickname">Default Human</string>
+    <string name="account">account@email.com</string>
+    <string name="edit">edit</string>
+    <string name="edit_reminders">Edit Reminders</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thusday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="save">Save</string>
+    <string name="Delete">Delete</string>
+    <string name="custom_name">Custom Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new">Add New</string>
+    <string name="Reminder">Reminder</string>
+    <string name="textview">TextView</string>
+
+    <string name="title_add">Add</string>
+
+
 
 </resources>
