@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.friends.FriendsFragment">
 
-
     <LinearLayout
         android:id="@+id/fragment_search_new_friend_Id"
         android:layout_width="match_parent"
@@ -32,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
                 android:gravity="center"
-                android:src="@drawable/go_back"/>
+                android:text="Back"/>
 
             <EditText
                 android:id="@+id/search_friend_input"
