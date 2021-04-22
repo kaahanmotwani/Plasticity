@@ -40,8 +40,8 @@ public class SearchFriendsFragment extends Fragment {
             container.removeAllViews();
         }
 
-        dbHelper= new MyDatabaseHelper(container.getContext(), "Users.db", null, 1);
-        dbHelper.getWritableDatabase();
+//        dbHelper= new MyDatabaseHelper(container.getContext(), "Users.db", null, 1);
+//        dbHelper.getWritableDatabase();
 
         searchFriendsViewModel =
                 new ViewModelProvider(this).get(SearchFriendsViewModel.class);

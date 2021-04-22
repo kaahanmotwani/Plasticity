@@ -48,7 +48,7 @@
                 android:layout_weight="0.2"
                 android:gravity="center"
                 android:text="Search"
-                android:textColor="@color/black"
+
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -76,7 +76,6 @@
                     android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="Users"
-                    android:textColor="@color/black"
                     android:textSize="24sp" />
 
                 <LinearLayout
@@ -111,7 +110,7 @@
                     android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/black"
+
                     android:textSize="30sp" />
             </LinearLayout>
 

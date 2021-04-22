@@ -45,8 +45,8 @@ public class FriendsFragment extends Fragment {
             container.removeAllViews();
         }
 
-        dbHelper= new MyDatabaseHelper(container.getContext(), "Users.db", null, 1);
-        dbHelper.getWritableDatabase();
+//        dbHelper= new MyDatabaseHelper(container.getContext(), "Users.db", null, 1);
+//        dbHelper.getWritableDatabase();
 
         friendsViewModel =
                 new ViewModelProvider(this).get(FriendsViewModel.class);
