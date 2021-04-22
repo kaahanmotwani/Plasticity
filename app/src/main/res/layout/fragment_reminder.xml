@@ -14,12 +14,44 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
+
+        <TextView
+            android:id="@+id/notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:text="@string/Reminder"
+            />
+
+        <View
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnAddNew"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center_horizontal"
             android:text="@string/add_new"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/reminderList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </FrameLayout>

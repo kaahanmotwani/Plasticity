@@ -71,6 +71,7 @@ public class ReminderFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_reminder, container, false);
 
+
         Button btnadd_new = root.findViewById(R.id.btnAddNew);
         btnadd_new.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
