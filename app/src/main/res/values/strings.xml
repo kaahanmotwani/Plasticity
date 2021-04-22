@@ -5,6 +5,27 @@
     <string name="title_friends">Friends</string>
     <string name="title_settings">Settings</string>
 
+
+    <string-array name="friend_array">
+        <item>Lily</item>
+        <item>Poppy</item>
+        <item>Sunflower</item>
+        <item>Freesia</item>
+        <item>Daisy</item>
+        <item>Rose</item>
+        <item>Daffodil</item>
+        <item>Lavender</item>
+        <item>Peony</item>
+        <item>Lilac</item>
+        <item>Dahlia</item>
+        <item>Tulip</item>
+        <item>Dandelion</item>
+        <item>Geranium</item>
+        <item>Gardenia</item>
+        <item>Rhododendron</item>
+        <item>Azalea</item>
+    </string-array>
+
     <string name="settings">Settings</string>
     <string name="hidden_from_leaderboard">        Hidden from leaderboard                       </string>
     <string name="enable_friend_request">Enable friend request</string>
@@ -33,6 +54,7 @@
     <string name="textview">TextView</string>
 
     <string name="title_add">Add</string>
+
 
 
 </resources>
