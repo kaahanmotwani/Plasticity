@@ -13,10 +13,17 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.ui.log.LogFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AddFragment extends Fragment {
 
@@ -67,11 +74,41 @@ public class AddFragment extends Fragment {
         final ImageButton wrapper = root.findViewById(R.id.t_plastic_wrapper);
         final ImageButton lid = root.findViewById(R.id.t_plastic_lids);
 
+        Button logButton = root.findViewById(R.id.log_button);
+
+        logButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogFragment fragment = new LogFragment();
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.addId, fragment);
+                //fragmentTransaction.addToBackStack(null);
+
+                fragmentTransaction.commit();
+
+
+//                View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
+//                TextView goalName = goalChunk.findViewById(R.id.goalName);
+//                goalName.setText("Test");
+//
+//                goalsList.addView(goalChunk);
+            }
+        });
+
 
         //Adding Items to Selected
         groceryBag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Grocery Bag") != null) {
+                    MainActivity.itemInfo.put("Grocery Bag", MainActivity.itemInfo.get("Grocery Bag")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Grocery Bag", 1);
+                }
 
                 ImageButton newItem = new ImageButton(groceryBag.getContext());
                 newItem.setLayoutParams(groceryBag.getLayoutParams());
@@ -90,6 +127,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Grocery Bag") == 1) {
+                            MainActivity.itemInfo.remove("Grocery Bag");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Grocery Bag", MainActivity.itemInfo.get("Grocery Bag")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -99,6 +142,13 @@ public class AddFragment extends Fragment {
         cutlery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Plastic Cutlery") != null) {
+                    MainActivity.itemInfo.put("Plastic Cutlery", MainActivity.itemInfo.get("Plastic Cutlery")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Plastic Cutlery", 1);
+                }
 
                 ImageButton newItem = new ImageButton(cutlery.getContext());
                 newItem.setLayoutParams(cutlery.getLayoutParams());
@@ -117,6 +167,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Plastic Cutlery") == 1) {
+                            MainActivity.itemInfo.remove("Plastic Cutlery");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Plastic Cutlery", MainActivity.itemInfo.get("Plastic Cutlery")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -126,6 +182,13 @@ public class AddFragment extends Fragment {
         plasticWrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Plastic Wrap") != null) {
+                    MainActivity.itemInfo.put("Plastic Wrap", MainActivity.itemInfo.get("Plastic Wrap")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Plastic Wrap", 1);
+                }
 
                 ImageButton newItem = new ImageButton(plasticWrap.getContext());
                 newItem.setLayoutParams(plasticWrap.getLayoutParams());
@@ -144,6 +207,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Plastic Wrap") == 1) {
+                            MainActivity.itemInfo.remove("Plastic Wrap");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Plastic Wrap", MainActivity.itemInfo.get("Plastic Wrap")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -153,6 +222,13 @@ public class AddFragment extends Fragment {
         dentalFloss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Dental Floss") != null) {
+                    MainActivity.itemInfo.put("Dental Floss", MainActivity.itemInfo.get("Dental Floss")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Dental Floss", 1);
+                }
 
                 ImageButton newItem = new ImageButton(dentalFloss.getContext());
                 newItem.setLayoutParams(dentalFloss.getLayoutParams());
@@ -171,6 +247,13 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        if (MainActivity.itemInfo.get("Dental Floss") == 1) {
+                            MainActivity.itemInfo.remove("Dental Floss");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Dental Floss", MainActivity.itemInfo.get("Dental Floss")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -180,6 +263,13 @@ public class AddFragment extends Fragment {
         soapShampoo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Bottled Soap") != null) {
+                    MainActivity.itemInfo.put("Bottled Soap", MainActivity.itemInfo.get("Bottled Soap")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Bottled Soap", 1);
+                }
 
                 ImageButton newItem = new ImageButton(soapShampoo.getContext());
                 newItem.setLayoutParams(soapShampoo.getLayoutParams());
@@ -198,6 +288,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Bottled Soap") == 1) {
+                            MainActivity.itemInfo.remove("Bottled Soap");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Bottled Soap", MainActivity.itemInfo.get("Bottled Soap")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -207,6 +303,13 @@ public class AddFragment extends Fragment {
         toothpaste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Toothpaste") != null) {
+                    MainActivity.itemInfo.put("Toothpaste", MainActivity.itemInfo.get("Toothpaste")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Toothpaste", 1);
+                }
 
                 ImageButton newItem = new ImageButton(toothpaste.getContext());
                 newItem.setLayoutParams(toothpaste.getLayoutParams());
@@ -225,6 +328,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Toothpaste") == 1) {
+                            MainActivity.itemInfo.remove("Toothpaste");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Toothpaste", MainActivity.itemInfo.get("Toothpaste")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -234,6 +343,13 @@ public class AddFragment extends Fragment {
         balloon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Balloon") != null) {
+                    MainActivity.itemInfo.put("Balloon", MainActivity.itemInfo.get("Balloon")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Balloon", 1);
+                }
 
                 ImageButton newItem = new ImageButton(balloon.getContext());
                 newItem.setLayoutParams(balloon.getLayoutParams());
@@ -252,6 +368,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Balloon") == 1) {
+                            MainActivity.itemInfo.remove("Balloon");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Balloon", MainActivity.itemInfo.get("Balloon")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -261,6 +383,13 @@ public class AddFragment extends Fragment {
         tape.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Tape") != null) {
+                    MainActivity.itemInfo.put("Tape", MainActivity.itemInfo.get("Tape")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Tape", 1);
+                }
 
                 ImageButton newItem = new ImageButton(tape.getContext());
                 newItem.setLayoutParams(tape.getLayoutParams());
@@ -279,6 +408,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Tape") == 1) {
+                            MainActivity.itemInfo.remove("Tape");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Tape", MainActivity.itemInfo.get("Tape")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -288,6 +423,13 @@ public class AddFragment extends Fragment {
         wrappingPaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Wrapping Paper") != null) {
+                    MainActivity.itemInfo.put("Wrapping Paper", MainActivity.itemInfo.get("Wrapping Paper")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Wrapping Paper", 1);
+                }
 
                 ImageButton newItem = new ImageButton(wrappingPaper.getContext());
                 newItem.setLayoutParams(wrappingPaper.getLayoutParams());
@@ -306,6 +448,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Wrapping Paper") == 1) {
+                            MainActivity.itemInfo.remove("Wrapping Paper");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Wrapping Paper", MainActivity.itemInfo.get("Wrapping Paper")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -315,6 +463,13 @@ public class AddFragment extends Fragment {
         bottle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Water Bottle") != null) {
+                    MainActivity.itemInfo.put("Water Bottle", MainActivity.itemInfo.get("Water Bottle")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Water Bottle", 1);
+                }
 
                 ImageButton newItem = new ImageButton(bottle.getContext());
                 newItem.setLayoutParams(bottle.getLayoutParams());
@@ -333,6 +488,13 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        if (MainActivity.itemInfo.get("Water Bottle") == 1) {
+                            MainActivity.itemInfo.remove("Water Bottle");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Water Bottle", MainActivity.itemInfo.get("Water Bottle")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -342,6 +504,13 @@ public class AddFragment extends Fragment {
         wrapper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Food Wrapper") != null) {
+                    MainActivity.itemInfo.put("Food Wrapper", MainActivity.itemInfo.get("Food Wrapper")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Food Wrapper", 1);
+                }
 
                 ImageButton newItem = new ImageButton(wrapper.getContext());
                 newItem.setLayoutParams(wrapper.getLayoutParams());
@@ -360,6 +529,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Food Wrapper") == 1) {
+                            MainActivity.itemInfo.remove("Food Wrapper");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Food Wrapper", MainActivity.itemInfo.get("Food Wrapper")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
@@ -369,6 +544,13 @@ public class AddFragment extends Fragment {
         lid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (MainActivity.itemInfo.get("Plastic Lid") != null) {
+                    MainActivity.itemInfo.put("Plastic Lid", MainActivity.itemInfo.get("Plastic Lid")+1);
+                }
+                else {
+                    MainActivity.itemInfo.put("Plastic Lid", 1);
+                }
 
                 ImageButton newItem = new ImageButton(lid.getContext());
                 newItem.setLayoutParams(lid.getLayoutParams());
@@ -387,6 +569,12 @@ public class AddFragment extends Fragment {
                 newItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (MainActivity.itemInfo.get("Plastic Lid") == 1) {
+                            MainActivity.itemInfo.remove("Plastic Lid");
+                        }
+                        else {
+                            MainActivity.itemInfo.put("Plastic Lid", MainActivity.itemInfo.get("Plastic Lid")-1);
+                        }
                         ((TableRow)newItem.getParent()).removeView(newItem);
                     }
                 });
