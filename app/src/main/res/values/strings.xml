@@ -4,6 +4,7 @@
     <string name="title_goals">Goals</string>
     <string name="title_friends">Friends</string>
     <string name="title_settings">Settings</string>
+
     <string name="settings">Settings</string>
     <string name="hidden_from_leaderboard">        Hidden from leaderboard                       </string>
     <string name="enable_friend_request">Enable friend request</string>
@@ -30,4 +31,8 @@
     <string name="add_new">Add New</string>
     <string name="Reminder">Reminder</string>
     <string name="textview">TextView</string>
+
+    <string name="title_add">Add</string>
+
+
 </resources>
