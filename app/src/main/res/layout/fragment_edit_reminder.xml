@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/editLayout"
     tools:context=".ui.friends.FriendsFragment">
 
 
@@ -32,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/editText"
             android:text="@string/sunday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
         //android:layout_centerHorizontal="true"
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -40,27 +41,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sundaysw"
-            android:layout_centerHorizontal="true"
             android:text="@string/monday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/tuesdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/mondaysw"
-            android:layout_centerHorizontal="true"
             android:text="@string/tuesday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/wednesdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tuesdaysw"
+            android:layout_below="@id/editText"
             android:layout_centerHorizontal="true"
             android:text="@string/wednesday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/thusdaysw"
@@ -69,7 +68,7 @@
             android:layout_below="@id/wednesdaysw"
             android:layout_centerHorizontal="true"
             android:text="@string/thusday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -79,16 +78,17 @@
             android:layout_below="@id/thusdaysw"
             android:layout_centerHorizontal="true"
             android:text="@string/friday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/saturdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fridaysw"
+            android:layout_below="@id/editText"
+            android:layout_toEndOf="@id/wednesdaysw"
             android:layout_centerHorizontal="true"
             android:text="@string/saturday"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/save"
@@ -97,7 +97,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/timepicker"
             android:layout_marginStart="75dp"
-            android:layout_marginTop="20dp"
             android:text="@string/save" />
 
         <com.google.android.material.button.MaterialButton
@@ -107,17 +106,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/timepicker"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/save"
             android:text="@string/Delete" />
 
         <TimePicker
             android:id="@+id/timepicker"
-            android:layout_width="406dp"
-            android:layout_height="wrap_content"
+            android:layout_width="405dp"
+            android:layout_height="340dp"
             android:layout_below="@+id/fridaysw"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-77dp" />
+            android:layout_marginTop="1dp" />
 
 
     </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.settings;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -74,8 +75,28 @@ public class EditReminderFragment extends Fragment {
         if (container != null) {
             container.removeAllViews();
         }
-        Log.i("string/add","hello");
         View root = inflater.inflate(R.layout.fragment_edit_reminder, container, false);
+        Button btnSave = root.findViewById(R.id.save);
+        Button btnDelete = root.findViewById(R.id.delete);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getChildFragmentManager().beginTransaction();
+                fr.replace(R.id.editLayout,new ReminderFragment());
+                fr.commit();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getChildFragmentManager().beginTransaction();
+                fr.replace(R.id.editLayout,new ReminderFragment());
+                fr.commit();
+            }
+        });
         return root;
     }
 }
