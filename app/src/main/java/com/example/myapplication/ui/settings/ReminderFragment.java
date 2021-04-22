@@ -11,8 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,7 +75,35 @@ public class ReminderFragment extends Fragment {
         }
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_reminder, container, false);
+        ViewGroup reminderList = root.findViewById(R.id.reminderList);
+        for (HashMap.Entry<String,Reminders> entry : MainActivity.reminders.entrySet()) {
+            View reminderChunk = getLayoutInflater().inflate(R.layout.chunk_reminder, reminderList, false);
+            TextView reminderName = reminderChunk.findViewById(R.id.reminderName);
+            reminderName.setText(entry.getValue().getName());
+            reminderList.addView(reminderChunk);
+            ImageButton editButton = root.findViewById(R.id.editReminder);
 
+
+            editButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EditReminderFragment fragment = new EditReminderFragment();
+//
+                    //Bundle bundle = new Bundle();
+                    //bundle.putString("name", entry.getKey());
+                    //bundle.putString("notes", entry.getValue().getNotes());
+                    //fragment.setArguments(bundle);
+
+                    FragmentTransaction fr = getChildFragmentManager().beginTransaction();
+                    fr.replace(R.id.reminderfrag,new EditReminderFragment());
+                    fr.commit();
+
+
+
+                }
+            });
+
+        }
 
         Button btnadd_new = root.findViewById(R.id.btnAddNew);
         btnadd_new.setOnClickListener(new View.OnClickListener() {

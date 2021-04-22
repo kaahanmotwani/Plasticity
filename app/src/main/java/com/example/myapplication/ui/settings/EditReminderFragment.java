@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TimePicker;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 /**
@@ -64,8 +66,6 @@ public class EditReminderFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        //TimePicker tp = getView().findViewById(R.id.timepicker);
-
     }
 
     @Override
@@ -78,6 +78,15 @@ public class EditReminderFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_edit_reminder, container, false);
         Button btnSave = root.findViewById(R.id.save);
         Button btnDelete = root.findViewById(R.id.delete);
+        TimePicker timePicker = root.findViewById(R.id.timepicker);
+        EditText reminderName = root.findViewById(R.id.editText);
+        try {
+            Bundle bundle = this.getArguments();
+            reminderName.setText(bundle.getString("name"));
+        } catch (Exception e) {
+
+        }
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
@@ -85,6 +94,7 @@ public class EditReminderFragment extends Fragment {
                 FragmentTransaction fr = getChildFragmentManager().beginTransaction();
                 fr.replace(R.id.editLayout,new ReminderFragment());
                 fr.commit();
+                MainActivity.reminders.put(reminderName.getText().toString(), new Reminders(reminderName.getText().toString()));
             }
         });
 
@@ -95,6 +105,7 @@ public class EditReminderFragment extends Fragment {
                 FragmentTransaction fr = getChildFragmentManager().beginTransaction();
                 fr.replace(R.id.editLayout,new ReminderFragment());
                 fr.commit();
+                MainActivity.reminders.remove(reminderName.getText().toString());
             }
         });
         return root;

@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.os.Bundle;
 
 import com.example.myapplication.ui.settings.ReminderFragment;
+import com.example.myapplication.ui.settings.Reminders;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static HashMap<String, Reminders> reminders = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
