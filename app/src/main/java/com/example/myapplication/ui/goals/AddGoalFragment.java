@@ -7,13 +7,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
@@ -72,36 +70,37 @@ public class AddGoalFragment extends Fragment {
         if (container != null) {
             container.removeAllViews();
         }
+
         View root = inflater.inflate(R.layout.fragment_add_goal, container, false);
         Button submitGoal = root.findViewById(R.id.submitGoal);
         EditText goalName = root.findViewById(R.id.setGoalName);
         EditText goalNotes = root.findViewById(R.id.setGoalNotes);
 
+        String currentGoalName = "";
+
         try {
             Bundle bundle = this.getArguments();
             goalName.setText(bundle.getString("name"));
             goalNotes.setText(bundle.getString("notes"));
-        } catch (Exception e) {
+            currentGoalName = bundle.getString("name");
+        } catch (Exception ignored) {
 
         }
 
-
-
         // Onclick for add button
+        String copyCurrentGoalName = currentGoalName;
         submitGoal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                fragmentManager.popBackStack();
                 GoalsFragment fragment = new GoalsFragment();
-
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.addGoalLayout, fragment);
-                //fragmentTransaction.addToBackStack(null);
-
                 fragmentTransaction.commit();
 
+                if (!copyCurrentGoalName.equals(goalName.getText().toString())) {
+                    MainActivity.goals.remove(copyCurrentGoalName);
+                }
 
                 MainActivity.goals.put(goalName.getText().toString(), new Goal(goalName.getText().toString(), goalNotes.getText().toString()));
             }
@@ -113,19 +112,13 @@ public class AddGoalFragment extends Fragment {
         cancelGoal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                fragmentManager.popBackStack();
                 GoalsFragment fragment = new GoalsFragment();
-
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.addGoalLayout, fragment);
-                //fragmentTransaction.addToBackStack(null);
-
                 fragmentTransaction.commit();
 
                 MainActivity.goals.remove(goalName.getText().toString());
-                //MainActivity.goals.remove(goalName.getText().toString(), goalNotes.getText().toString());
             }
         });
 

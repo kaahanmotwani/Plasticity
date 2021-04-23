@@ -27,7 +27,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_gravity="center"
-        android:text="Set goal name here..."
+        android:hint="Set goal name here..."
         android:layout_marginTop="20dp"/>
 
     <EditText
@@ -37,7 +37,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Set goal notes here..."
+        android:hint="Set goal notes here..."
         android:layout_marginTop="20dp"/>
 
     <LinearLayout

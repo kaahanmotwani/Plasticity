@@ -58,7 +58,7 @@ public class GoalsFragment extends Fragment {
             goalName.setText(entry.getValue().getName());
             goalsList.addView(goalChunk);
 
-            ImageButton editButton = root.findViewById(R.id.edit);
+            ImageButton editButton = goalChunk.findViewById(R.id.edit);
 
 
             editButton.setOnClickListener(new View.OnClickListener() {
