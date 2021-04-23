@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public HashMap<String, Friend> friendHashMap;
     public static HashMap<String, Goal> goals = new HashMap<>();
     public static HashMap<String, Reminders> reminders = new HashMap<>();
+    public static HashMap<String, Integer> itemInfo = new HashMap<>();
   
     public void initFakeUserData(){
         friendHashMap = new HashMap<String, Friend>();
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_log, R.id.navigation_goals, R.id.navigation_friends, R.id.navigation_settings)
+                R.id.navigation_log, R.id.navigation_goals, R.id.navigation_add, R.id.navigation_friends, R.id.navigation_settings)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
