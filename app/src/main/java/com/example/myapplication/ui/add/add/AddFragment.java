@@ -1,10 +1,16 @@
 package com.example.myapplication.ui.add.add;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -24,6 +30,10 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.ui.log.LogFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class AddFragment extends Fragment {
 
@@ -76,6 +86,20 @@ public class AddFragment extends Fragment {
 
         Button logButton = root.findViewById(R.id.log_button);
 
+        EditText searchbar = root.findViewById(R.id.search_bar);
+        ListView searchlist = root.findViewById(R.id.lvSearchResults);
+        int ITEM_HEIGHT = 125;
+        //ArrayList<String> itemList = new ArrayList<>();
+
+
+        String[] itemList = {"Grocery Bag", "Plastic Cutlery", "Plastic Wrap", "Dental Floss", "Bottled Soap", "Toothpaste",
+                                "Balloon", "Tape", "Wrapping Paper", "Water Bottle", "Food Wrapper", "Plastic Lid"};
+        
+
+
+        //ItemAdapter itemAdapter = new ItemAdapter(this.getContext(), itemName);
+        //searchlist.setAdapter(itemAdapter);
+
         logButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +118,60 @@ public class AddFragment extends Fragment {
 //                goalName.setText("Test");
 //
 //                goalsList.addView(goalChunk);
+            }
+        });
+
+//
+//        itemList.add("Grocery Bag");
+//        itemList.add("Plastic Cutlery");
+//        itemList.add("Plastic Wrap");
+//        itemList.add("Dental Floss");
+//        itemList.add("Bottled Soap");
+//        itemList.add("Toothpaste");
+//        itemList.add("Balloon");
+//        itemList.add("Tape");
+//        itemList.add("Wrapping Paper");
+//        itemList.add("Water Bottle");
+//        itemList.add("Food Wrapper");
+//        itemList.add("Plastic Lid");
+
+        searchbar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count > 0) {
+                    searchlist.setVisibility(View.VISIBLE);
+                }
+
+                List<String> list = new ArrayList<String>(Arrays.asList(itemList));
+                for (String item: itemList) {
+
+                    if (!item.contains(s)) {
+                        list.remove(item);
+                    }
+                    
+                }
+                String[] itemName = list.toArray(new String[0]);
+                ItemAdapter itemAdapter = new ItemAdapter(root.getContext(), itemName);
+                searchlist.setAdapter(itemAdapter);
+
+
+
+                ViewGroup.LayoutParams layoutParams = searchlist.getLayoutParams();
+                layoutParams.height = itemName.length * ITEM_HEIGHT;
+                searchlist.setLayoutParams(layoutParams);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().equals("")) {
+                    searchlist.setVisibility(View.GONE);
+                }
+
             }
         });
 
