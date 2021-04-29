@@ -4,7 +4,8 @@
     <item
         android:id="@+id/navigation_log"
         android:icon="@drawable/ic_action_event_log"
-        android:title="@string/title_log" />
+        android:title="@string/title_log"
+        />
 
     <item
         android:id="@+id/navigation_goals"
