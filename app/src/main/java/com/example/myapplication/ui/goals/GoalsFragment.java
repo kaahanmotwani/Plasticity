@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -52,11 +53,23 @@ public class GoalsFragment extends Fragment {
 //        goalsList.addView(goalChunk);
 //        Log.i("tag", goals.get(0));
 
+
+
         for (HashMap.Entry<String,Goal> entry : MainActivity.goals.entrySet()) {
             View goalChunk = getLayoutInflater().inflate(R.layout.chunk_goal, goalsList, false);
             TextView goalName = goalChunk.findViewById(R.id.goalName);
             goalName.setText(entry.getValue().getName());
             goalsList.addView(goalChunk);
+            CheckBox check = goalChunk.findViewById(R.id.checkBox);
+            check.setChecked(entry.getValue().getIsComplete());
+
+
+            check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    entry.getValue().setComplete(!entry.getValue().getIsComplete());
+                }
+            });
 
             ImageButton editButton = goalChunk.findViewById(R.id.edit);
 
