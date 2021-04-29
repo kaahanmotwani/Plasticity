@@ -1,6 +1,8 @@
 package com.example.myapplication.ui.friends;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,7 @@ public class SearchFriendsFragment extends Fragment {
     private SearchFriendsViewModel searchFriendsViewModel;
     private List<Friend> people_list = new ArrayList<>();
     private MyDatabaseHelper dbHelper;
+    private SearchFriendAdapter myAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -60,26 +63,31 @@ public class SearchFriendsFragment extends Fragment {
             }
         });
 
-//        Button search_btn = (Button) root.findViewById(R.id.search_friend_btn);
-//        search_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                EditText text_input = (EditText) root.findViewById(R.id.search_friend_input);
-//                HashMap<String, Friend> friendHashMap = ((MainActivity) getActivity()).friendHashMap;
-//                people_list.clear();
-//                ListView listView = root.findViewById(R.id.search_friend_list);
-//                Iterator iterator = friendHashMap.entrySet().iterator();
-//                while (iterator.hasNext()) {
-//                    Map.Entry<String,Friend> entry = (Map.Entry) iterator.next();
-//                    if(!entry.getValue().isFollowed() &&
-//                            (entry.getValue().getName().contains(text_input.getText().toString())
-//                                    || text_input.getText().toString().contains((entry.getValue().getName())))){
-//                        people_list.add(new Friend(entry.getValue().getName(), entry.getValue().getLevel(), false));
-//                    }
-//                }
-//                Collections.sort(people_list, (f1, f2) -> (f2.getLevel() - f1.getLevel()));
-//            }
-//        });
+        EditText edittext = (EditText) root.findViewById(R.id.search_friend_input);
+        edittext.addTextChangedListener(new TextWatcher() {
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                if(!s.equals("") ) {
+                    //do your work here
+                    myAdapter.getFilter().filter(s);
+                }
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        Button search_btn = (Button) root.findViewById(R.id.search_friend_btn);
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText text_input = (EditText) root.findViewById(R.id.search_friend_input);
+                myAdapter.getFilter().filter(text_input.getText().toString());
+            }
+        });
 
         HashMap<String, Friend> friendHashMap = ((MainActivity) getActivity()).friendHashMap;
         Iterator iterator = friendHashMap.entrySet().iterator();
@@ -94,7 +102,7 @@ public class SearchFriendsFragment extends Fragment {
 
         ListView listView = root.findViewById(R.id.search_friend_list);
 
-        BaseAdapter myAdapter = new SearchFriendAdapter(people_list, container.getContext(), friendHashMap);
+        myAdapter = new SearchFriendAdapter(people_list, container.getContext(), friendHashMap);
         listView.setAdapter(myAdapter);
 
 
