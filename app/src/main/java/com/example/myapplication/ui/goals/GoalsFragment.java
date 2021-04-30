@@ -88,9 +88,6 @@ public class GoalsFragment extends Fragment {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.goalsId, fragment);
                     fragmentTransaction.commit();
-
-
-
                 }
             });
 

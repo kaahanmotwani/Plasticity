@@ -76,13 +76,12 @@ public class ReminderFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_reminder, container, false);
         ViewGroup reminderList = root.findViewById(R.id.reminderList);
-        for (HashMap.Entry<String,Reminders> entry : MainActivity.reminders.entrySet()) {
+        for (HashMap.Entry<String, Reminders> entry : MainActivity.reminders.entrySet()) {
             View reminderChunk = getLayoutInflater().inflate(R.layout.chunk_reminder, reminderList, false);
             TextView reminderName = reminderChunk.findViewById(R.id.reminderName);
             reminderName.setText(entry.getValue().getName());
             reminderList.addView(reminderChunk);
-            ImageButton editButton = root.findViewById(R.id.editReminder);
-
+            ImageButton editButton = reminderChunk.findViewById(R.id.editReminder);
 
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -96,9 +95,6 @@ public class ReminderFragment extends Fragment {
                     FragmentTransaction fr = getChildFragmentManager().beginTransaction();
                     fr.replace(R.id.reminderfrag, fragment);
                     fr.commit();
-
-
-
                 }
             });
 

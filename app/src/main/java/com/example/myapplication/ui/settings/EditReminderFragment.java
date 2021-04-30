@@ -80,15 +80,18 @@ public class EditReminderFragment extends Fragment {
         Button btnDelete = root.findViewById(R.id.delete);
         TimePicker timePicker = root.findViewById(R.id.timepicker);
         EditText reminderName = root.findViewById(R.id.editText);
+
+        String currentReminderName = "";
+
         try {
             Bundle bundle = this.getArguments();
-            Log.i("abc","hello");
-            Log.i("abc", bundle.getString("name"));
             reminderName.setText(bundle.getString("name"));
+            currentReminderName = bundle.getString("name");
         } catch (Exception e) {
 
         }
 
+        String copyCurrentReminderName = currentReminderName;
         btnSave.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
@@ -96,6 +99,11 @@ public class EditReminderFragment extends Fragment {
                 FragmentTransaction fr = getChildFragmentManager().beginTransaction();
                 fr.replace(R.id.editLayout,new ReminderFragment());
                 fr.commit();
+
+                if (!copyCurrentReminderName.equals(reminderName.getText().toString())) {
+                    MainActivity.reminders.remove(copyCurrentReminderName);
+                }
+
                 MainActivity.reminders.put(reminderName.getText().toString(), new Reminders(reminderName.getText().toString()));
             }
         });

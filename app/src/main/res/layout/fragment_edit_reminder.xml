@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/editLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.friends.FriendsFragment">
 
 
@@ -23,7 +23,7 @@
             android:autofillHints="@string/custom_name"
             android:hint="@string/custom_name"
             android:inputType="text"
-            android:padding="1dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -85,8 +85,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editText"
-            android:layout_toEndOf="@id/wednesdaysw"
             android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@id/wednesdaysw"
             android:text="@string/saturday"
             android:textSize="15sp" />
 
@@ -111,14 +111,13 @@
 
         <TimePicker
             android:id="@+id/timepicker"
-            android:layout_width="405dp"
+            android:layout_width="match_parent"
             android:layout_height="340dp"
             android:layout_below="@+id/fridaysw"
-            android:layout_marginTop="1dp" />
-
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="6dp" />
 
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
