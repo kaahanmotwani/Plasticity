@@ -21,7 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-12dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,7 +34,6 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:text="My Level: 3"
-
                 android:textSize="22sp" />
 
             <Button
@@ -76,14 +77,14 @@
                     android:background="@android:color/darker_gray" />
             </LinearLayout>
 
-
         </LinearLayout>
 
         <ListView
             android:id="@+id/friendList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/text_notifications"
