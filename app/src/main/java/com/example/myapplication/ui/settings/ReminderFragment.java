@@ -88,14 +88,13 @@ public class ReminderFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     EditReminderFragment fragment = new EditReminderFragment();
-//
-                    //Bundle bundle = new Bundle();
-                    //bundle.putString("name", entry.getKey());
-                    //bundle.putString("notes", entry.getValue().getNotes());
-                    //fragment.setArguments(bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", entry.getKey());
+                    //bundle.putString("name",entry.getValue().getName());
+                    fragment.setArguments(bundle);
 
                     FragmentTransaction fr = getChildFragmentManager().beginTransaction();
-                    fr.replace(R.id.reminderfrag,new EditReminderFragment());
+                    fr.replace(R.id.reminderfrag, fragment);
                     fr.commit();
 
 
