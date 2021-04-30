@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.log;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,10 +23,13 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class LogFragment extends Fragment {
 
     private LogViewModel logViewModel;
+    private TextView count;
+    private TextView grams;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,10 +46,10 @@ public class LogFragment extends Fragment {
             TextView itemName = itemChunk.findViewById(R.id.itemName);
             itemName.setText(entry.getKey());
 
-            TextView count = itemChunk.findViewById(R.id.count);
+            count = itemChunk.findViewById(R.id.count);
             count.setText(entry.getValue().toString());
 
-            TextView grams = itemChunk.findViewById(R.id.grams);
+            grams = itemChunk.findViewById(R.id.grams);
 
             if (entry.getKey().equals("Grocery Bag")) {
                 String GBmass = 10 * entry.getValue() + "g";
@@ -83,8 +89,25 @@ public class LogFragment extends Fragment {
                 grams.setText(PCmass);
             }
 
+            ImageButton editButton = (ImageButton) itemChunk.findViewById(R.id.edit);
+
+
+            editButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openDialog(entry.getKey());
+//                    LogFragment fragment = new LogFragment();
+//
+//                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.detach(fragment).attach(fragment).commit();
+                }
+            });
+
             itemList.addView(itemChunk);
         }
+
+
 
 
         //final TextView textView = root.findViewById(R.id.log_button);
@@ -98,4 +121,16 @@ public class LogFragment extends Fragment {
         return root;
     }
 
+
+    public void openDialog(String itemName) {
+        EditLog editLog = new EditLog();
+        editLog.setItemName(itemName);
+        editLog.show(getParentFragmentManager(), "Edit");
+    }
+
+//    @Override
+//    public void applyText(String c, String g) {
+//        count.setText(c);
+//        grams.setText(g);
+//    }
 }

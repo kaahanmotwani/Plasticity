@@ -89,16 +89,10 @@ public class AddFragment extends Fragment {
         EditText searchbar = root.findViewById(R.id.search_bar);
         ListView searchlist = root.findViewById(R.id.lvSearchResults);
         int ITEM_HEIGHT = 125;
-        //ArrayList<String> itemList = new ArrayList<>();
-
 
         String[] itemList = {"Grocery Bag", "Plastic Cutlery", "Plastic Wrap", "Dental Floss", "Bottled Soap", "Toothpaste",
                                 "Balloon", "Tape", "Wrapping Paper", "Water Bottle", "Food Wrapper", "Plastic Lid"};
-        
 
-
-        //ItemAdapter itemAdapter = new ItemAdapter(this.getContext(), itemName);
-        //searchlist.setAdapter(itemAdapter);
 
         logButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,20 +114,6 @@ public class AddFragment extends Fragment {
 //                goalsList.addView(goalChunk);
             }
         });
-
-//
-//        itemList.add("Grocery Bag");
-//        itemList.add("Plastic Cutlery");
-//        itemList.add("Plastic Wrap");
-//        itemList.add("Dental Floss");
-//        itemList.add("Bottled Soap");
-//        itemList.add("Toothpaste");
-//        itemList.add("Balloon");
-//        itemList.add("Tape");
-//        itemList.add("Wrapping Paper");
-//        itemList.add("Water Bottle");
-//        itemList.add("Food Wrapper");
-//        itemList.add("Plastic Lid");
 
         searchbar.addTextChangedListener(new TextWatcher() {
             @Override
