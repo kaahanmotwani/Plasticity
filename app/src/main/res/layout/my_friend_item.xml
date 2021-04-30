@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="80dp"
-        android:paddingLeft="30dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="20dp">
+
         <LinearLayout
-            android:padding="10dp"
-            android:background="#ffffff"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:padding="0dp">
             <!--What you want to show in SurfaceView-->
             <Button
                 android:id="@+id/unfollow_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:text="Unfollow"/>
+                android:layout_marginEnd="30dp"
+                android:padding="0dp"
+                android:text="Unfollow" />
         </LinearLayout>
-    <LinearLayout
-        android:id="@+id/friend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        android:paddingTop="15dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="0dp"
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/friend"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
+            android:layout_marginHorizontal="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="0dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            android:textSize="22sp" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
 
-        <TextView
-            android:id="@+id/level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="end"
+                android:textSize="22sp" />
 
-            android:textSize="22sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+
+                android:textSize="22sp" />
+        </LinearLayout>
     </com.daimajia.swipe.SwipeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
