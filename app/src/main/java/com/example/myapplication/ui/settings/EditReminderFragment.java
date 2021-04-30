@@ -82,6 +82,8 @@ public class EditReminderFragment extends Fragment {
         EditText reminderName = root.findViewById(R.id.editText);
         try {
             Bundle bundle = this.getArguments();
+            Log.i("abc","hello");
+            Log.i("abc", bundle.getString("name"));
             reminderName.setText(bundle.getString("name"));
         } catch (Exception e) {
 
@@ -110,4 +112,5 @@ public class EditReminderFragment extends Fragment {
         });
         return root;
     }
+
 }
