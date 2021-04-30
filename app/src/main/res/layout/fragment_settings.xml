@@ -88,9 +88,9 @@
             android:id="@+id/soundsw"
             android:checked="true"
             android:layout_below="@+id/notification"
+            android:theme="@style/Theme.MyTheme"
             android:textSize="20sp"
             android:padding="20dp"
-
             android:text="@string/sound"/>
 
         <Button
@@ -130,6 +130,7 @@
             android:id="@+id/allowRequest"
             android:checked="true"
             android:layout_below="@+id/social"
+            android:theme="@style/Theme.MyTheme"
             android:textSize="20sp"
             android:padding="20dp"
             android:text="@string/enable_friend_request"/>
@@ -141,6 +142,7 @@
             android:layout_below="@+id/allowRequest"
             android:textSize="20sp"
             android:padding="20dp"
+            android:theme="@style/Theme.MyTheme"
             android:text="@string/hidden_from_leaderboard"/>
 
     </RelativeLayout>

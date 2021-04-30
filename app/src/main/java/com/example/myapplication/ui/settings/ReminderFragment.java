@@ -89,6 +89,16 @@ public class ReminderFragment extends Fragment {
                     EditReminderFragment fragment = new EditReminderFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("name", entry.getKey());
+                    bundle.putInt("hour", entry.getValue().getHour());
+                    bundle.putInt("minute", entry.getValue().getMinute());
+                    bundle.putBoolean("sunday",entry.getValue().getSunday());
+                    bundle.putBoolean("monday",entry.getValue().getMonday());
+                    bundle.putBoolean("tuesday",entry.getValue().getTuesday());
+                    bundle.putBoolean("wednesday",entry.getValue().getWednesday());
+                    bundle.putBoolean("thursday",entry.getValue().getThrusday());
+                    bundle.putBoolean("friday",entry.getValue().getFriday());
+                    bundle.putBoolean("saturday",entry.getValue().getSaturday());
+
                     //bundle.putString("name",entry.getValue().getName());
                     fragment.setArguments(bundle);
 

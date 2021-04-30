@@ -32,8 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editText"
+            android:theme="@style/Theme.MyTheme"
+            android:layout_marginVertical="10dp"
             android:text="@string/sunday"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
         //android:layout_centerHorizontal="true"
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -41,34 +43,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sundaysw"
+            android:theme="@style/Theme.MyTheme"
+            android:layout_marginVertical="10dp"
             android:text="@string/monday"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/tuesdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/mondaysw"
+            android:theme="@style/Theme.MyTheme"
+            android:layout_marginVertical="10dp"
             android:text="@string/tuesday"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/wednesdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editText"
+            android:theme="@style/Theme.MyTheme"
+            android:layout_marginVertical="10dp"
             android:layout_centerHorizontal="true"
             android:text="@string/wednesday"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/thusdaysw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/wednesdaysw"
+            android:layout_marginVertical="10dp"
+            android:theme="@style/Theme.MyTheme"
             android:layout_centerHorizontal="true"
             android:text="@string/thusday"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -77,8 +87,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/thusdaysw"
             android:layout_centerHorizontal="true"
+            android:theme="@style/Theme.MyTheme"
             android:text="@string/friday"
-            android:textSize="15sp" />
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/saturdaysw"
@@ -88,7 +100,9 @@
             android:layout_centerHorizontal="true"
             android:layout_toEndOf="@id/wednesdaysw"
             android:text="@string/saturday"
-            android:textSize="15sp" />
+            android:theme="@style/Theme.MyTheme"
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/save"
@@ -115,7 +129,8 @@
             android:layout_height="340dp"
             android:layout_below="@+id/fridaysw"
             android:layout_marginTop="1dp"
-            android:layout_marginEnd="6dp" />
+            android:layout_marginEnd="6dp"
+            android:theme="@style/Theme.MyTheme"/>
 
     </RelativeLayout>
 

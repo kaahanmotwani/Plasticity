@@ -1,8 +1,10 @@
 package com.example.myapplication.ui.settings;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -17,6 +19,7 @@ import android.widget.TimePicker;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,6 +71,7 @@ public class EditReminderFragment extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,7 +83,17 @@ public class EditReminderFragment extends Fragment {
         Button btnSave = root.findViewById(R.id.save);
         Button btnDelete = root.findViewById(R.id.delete);
         TimePicker timePicker = root.findViewById(R.id.timepicker);
+        SwitchMaterial sundaySw = root.findViewById(R.id.sundaysw);
+        SwitchMaterial mondaySw = root.findViewById(R.id.mondaysw);
+        SwitchMaterial tuesdaySw = root.findViewById(R.id.tuesdaysw);
+        SwitchMaterial wednesdaySw = root.findViewById(R.id.wednesdaysw);
+        SwitchMaterial thursdaySw = root.findViewById(R.id.thusdaysw);
+        SwitchMaterial fridaySw = root.findViewById(R.id.fridaysw);
+        SwitchMaterial saturdaySw = root.findViewById(R.id.saturdaysw);
+        timePicker.setIs24HourView(Boolean.TRUE);
         EditText reminderName = root.findViewById(R.id.editText);
+        //int hour = timePicker.getHour();
+        //int minute = timePicker.getMinute();
 
         String currentReminderName = "";
 
@@ -87,6 +101,15 @@ public class EditReminderFragment extends Fragment {
             Bundle bundle = this.getArguments();
             reminderName.setText(bundle.getString("name"));
             currentReminderName = bundle.getString("name");
+            timePicker.setHour(bundle.getInt("hour"));
+            timePicker.setMinute(bundle.getInt("minute"));
+            sundaySw.setChecked(bundle.getBoolean("sunday"));
+            mondaySw.setChecked(bundle.getBoolean("monday"));
+            tuesdaySw.setChecked(bundle.getBoolean("tuesday"));
+            wednesdaySw.setChecked(bundle.getBoolean("wednesday"));
+            thursdaySw.setChecked(bundle.getBoolean("thursday"));
+            fridaySw.setChecked(bundle.getBoolean("friday"));
+            saturdaySw.setChecked(bundle.getBoolean("saturday"));
         } catch (Exception e) {
 
         }
@@ -104,7 +127,7 @@ public class EditReminderFragment extends Fragment {
                     MainActivity.reminders.remove(copyCurrentReminderName);
                 }
 
-                MainActivity.reminders.put(reminderName.getText().toString(), new Reminders(reminderName.getText().toString()));
+                MainActivity.reminders.put(reminderName.getText().toString(), new Reminders(reminderName.getText().toString(),timePicker.getHour(),timePicker.getMinute(),sundaySw.isChecked(),mondaySw.isChecked(),tuesdaySw.isChecked(),wednesdaySw.isChecked(),thursdaySw.isChecked(),fridaySw.isChecked(),saturdaySw.isChecked()));
             }
         });
 
